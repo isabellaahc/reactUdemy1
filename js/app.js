@@ -154,9 +154,50 @@ const persona = {
 persona.mostrarNombre();
 persona.mostrarFechaActual();
 
+//destructuring
+let {nombre} = persona;
+
+console.log(nombre);
+
+//maps
+
+const appContenedor = document.querySelector('#app');
+appContenedor.innerHTML = canciones;
+
+//para retornar un nuevo arreglo en base a otro
+canciones.map(canciones => {
+    return `Las canciones de chayanne son: ${canciones}`
+});
+
+//Para acceder a los keys de un objeto
+console.log(Object.keys(persona));
 
 
+//spread Operator
+//sirve para copiar 
 
+const suma = (a,b,c) => { console.log(a+b+c) };
 
+const numeros = [1,2,3];
+//... es la forma de ocupar spread operator
+suma(...numeros);
 
+//funciones para arrays
+const listado = [
+    {nombre: 'isabel', apellido: 'anabalon', edad: 30},
+    {nombre: 'pablo', apellido: 'anabalon', edad: 31},
+    {nombre: 'maria', apellido: 'fuentes', edad: 40},
+    {nombre: 'horacio', apellido: 'salas', edad: 27}
+]
+
+console.log(listado);
+
+//filtra por valor de parametro u objeto del array
+ 
+const consulta = listado.filter(persona => {
+    console.log(persona.nombre);
+    return persona.edad >35;
+});
+
+console.log(consulta);
 
